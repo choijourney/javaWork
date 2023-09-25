@@ -52,7 +52,7 @@ public class _04_array {
         String[] seatB = {"B1", "B2", "B3", "B4", "B5"};
         String[] seatC = {"C1", "C2", "C3", "C4", "C5"};
 
-        String[][] seats = new String[][] {   // new String[][] 생략가능
+        String[][] seats = new String[][]{   // new String[][] 생략가능
                 {"A1", "A2", "A3", "A4", "A5"},
                 {"B1", "B2", "B3", "B4", "B5"},
                 {"C1", "C2", "C3", "C4", "C5"}
@@ -67,7 +67,7 @@ public class _04_array {
         };  // 길이가 다른 배열을 같은 배열에 넣을수있다
 
         // 3차원 배열 만들기
-        String[][][] marray = new String[][][] {};
+        String[][][] marray = new String[][][]{};
 
 
         // 다차원 배열 순회
@@ -97,6 +97,76 @@ public class _04_array {
             System.out.println();
         }
 
+        // 세로 크기 10 * 가로 크기 15 의 영화관 좌석 배열 만들기
+        String[][] seats5 = new String[10][15];
+        String[] eng = {"A","B","C","D","E","F","G","H","I","J"};
+        for (int i = 0; i < seats5.length; i++) {   //10번 반복 세로
+            for (int j = 0; j < seats5[i].length; j++) { //15번 반복 가로
+                seats5[i][j] = eng[i] + (j+1);  //A+1 A+2 A+3 A4 A5 A6 A7 A8 A9 A10 .. A15
+            }
+        }
+
+        // 표 구매
+        seats5[3][7] = "__";  // D8,D9
+        seats5[3][8] = "__";
+
+        // 만든 좌석 출력하기
+        for (int i = 0; i < seats5.length; i++) {
+            for (int j = 0; j < seats5[i].length; j++) {
+                System.out.print(seats5[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+
+        // 아스키 코드 (ANSI) 에서 만든 미국 표준 코드
+        char c = 'A'; //아스키코드는 하나의 문자기 때문에 char를 씀
+        System.out.println(c);      // A 출력
+        System.out.println((int)c); // 65 출력  A를 아스키 10진법 코드로 바꾸면 65
+
+        c = 'B';
+        System.out.println(c);      // B 출력
+        System.out.println((int)c); // 66 출력
+
+        c++;
+        System.out.println(c);      // C 출력
+        System.out.println((int)c); // 67 출력
+
+        // char 를 써서 c++ 연산을 해서 다음 문자인 C 를 얻을 수 있다
+        // c = 'a'; 소문자로 바꾸면 a 97 출력
+        // c= '0'; 숫자로 바꾸면 0 48 출력
+
+        // 알파벳 대문자 A는 65 부터 시작, 소문자 a는 97 부터 시작, 숫자 0은 48 부터 시작
+
+
+        // 아스키코드를 이용해 더 쉽게 영화관 좌석 배열 만들기
+        String[][] seats6 = new String[10][15];
+        char ch = 'A';
+        for (int i = 0; i < seats6.length; i++) {   //10번 반복 세로
+            for (int j = 0; j < seats6[i].length; j++) { //15번 반복 가로
+                seats6[i][j] = String.valueOf(ch) + (j+1);  // ch를 문자열로 바꿔 seats6와 형을맞춘다
+            }  // A1 A2 A3 .. A15 까지 반복후
+            ch++; // B 로 바꾼후 다시반복
+        }
+        // 좌석 출력하기
+        for (int i = 0; i < seats6.length; i++) {
+            for (int j = 0; j < seats6[i].length; j++) {
+                System.out.print(seats6[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+
+        // 퀴즈 배열을 활용해 쇼핑몰에서 구매 가능한 신발 사이즈를 출력하는 프로그램을 작성해라
+        // 신발 사이즈는 250 ~ 295 까지 5 단위로 증가 / 신발사이즈 수는 총 10가지
+        int[] size = new int[10];  // [10] 배열안에 요소를 몇개 만들건지 씀
+        int shoe = 250;
+
+        for (int i = 0; i <10; i++) {
+            size[i]= shoe;
+            System.out.println("사이즈 "+ shoe + " (재고 있음)");
+        shoe+=5;
+        }
 
     }
 }
