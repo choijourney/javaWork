@@ -1,0 +1,3 @@
+_01_  기초타입용어(char,float,double), 정수 실수 형변환, 문자 숫자 형변환, 연산 ( 자바는 소수점을 생략시킴 ), 증감연산 ++, 삼항연산자
+_02_ 포함메서드(contains, indexOf, lastIndexOf, startsWith), 문자열변환(replace,subString), 문자열비교 (equals), 이스케이프문자, if문, switchcase문
+
