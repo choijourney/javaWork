@@ -1,3 +1,8 @@
 _01_  기초타입용어(char,float,double), 정수 실수 형변환, 문자 숫자 형변환, 연산 ( 자바는 소수점을 생략시킴 ), 증감연산 ++, 삼항연산자
 _02_ 포함메서드(contains, indexOf, lastIndexOf, startsWith), 문자열변환(replace,subString), 문자열비교 (equals), 이스케이프문자, if문, switchcase문
+_03_ 반복문for, while, do while , 중첩 for, for문에서 break, while문에서 break, continue
+_04_ 배열, 배열의 순회, for each반복문, 다차원 배열, 길이 다른 배열순회, 영화관 좌석 배열 만들기, 아스키코드
+_05_ 메서드만들기(함수), return, 메서드 오버로딩, 변수 범위
+_06_ 메인메서드
+_07_ 메서드퀴즈 개인정보를 비공개로 전환하는 메서드 만들기
 

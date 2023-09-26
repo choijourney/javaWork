@@ -1,6 +1,6 @@
 package chap_01;
 
-public class _03_for {
+public class _03_for_while_doWhile_forBreak_continue {
     public static void main(String[] args) {
 
         // 반복문 for (fori 적고 엔터 치면 자동완성)

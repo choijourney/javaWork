@@ -1,6 +1,6 @@
 package chap_01;
 
-public class _04_array {
+public class _04_array_forEach_askiCode {
     public static void main(String[] args) {
 
         // array 배열 선언 첫 번째 방법
