@@ -67,5 +67,5 @@ public class _11_reference {
         public static void changeName(Camera camera){
             camera.name = "잘못된 카메라";
         }
-
+        // 메서드라서 main 밖에 썼음
 }
