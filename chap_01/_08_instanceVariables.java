@@ -15,7 +15,7 @@ public class _08_instanceVariables {
         BlackBox bbox = new BlackBox();
         bbox.modelName = "하양이";
         bbox.resolution = "UHD";
-        bbox.price = "300000";
+        bbox.price = 300000;
         bbox.color = "화이트";
         // BlackBox 클래스로부터 bbox 객체 생성
         // bbox 객체는 BlackBox 클래스의 인스턴스
@@ -65,6 +65,72 @@ public class _08_instanceVariables {
 
         fileCount = b1.getVideoFileCount(2); // 이벤트 영상
         System.out.println("이벤트 영상 파일 수 : " + fileCount+ "개");
+
+
+        // 메서드 오버로딩
+        b1.record(true,true,1); //영상녹화메서드
+        // 인수값을 안써도 호출할수있게 메서드 오버로딩으로 디폴트 메서드를 만듦
+        b1.record();
+
+        String s = "Black";
+        System.out.println(s.indexOf("a"));
+        // indexOf에 ctrl 키를 누르면서 클릭하면 메뉴얼이 나온다.
+        // 메서드 오버로딩을 볼 수있다
+
+
+        // 클래스와 메서드  강의 섹션 8 - 클래스 메소드 ★
+        b1.callServiceCenter();
+        BlackBox.callServiceCenter(); //클래스이름과 메서드를 써도된다
+
+
+        // this  Blackbox 클래스를 보면 this로 메서드를 만듦
+        b1.appendModelName("(최신형)");  // 모델이름에 인수값을 덧붙이는 메서드
+        System.out.println(b1.modelName);
+
+        // ctrl + shift + i 누르면 코드와 연결된 메서드,코드를 보여줌
+        // ctrl 키를 누르면서 코드를 누르면 연결된 코드 페이지로 이동함
+
+
+        // constructor 생성자
+
+        BlackBox b3 = new BlackBox();
+        b3.modelName = "노랑이";
+        b3.resolution= "UHD";
+        b3.price = 300000;
+        b3.color = "옐로우";
+        System.out.println(b3.serialNumber);
+
+        // ↑이렇게 따로안적고 ↓ 인수값에 한번에 적을수 있게 생성자를 이용해 만들었다.
+BlackBox b4 = new BlackBox("핑키","FHD",150000,"핑크");
+        System.out.println(b4.modelName);
+        System.out.println(b4.color);
+        System.out.println(b4.serialNumber);
+
+
+        // getter 와 setter
+        BlackBox b5 = new BlackBox();
+        b5.modelName = "주황이";
+       // b5.resolution = "UHD"; //실수로 주석처리했다는 가정
+        b5.price = 150000;
+        b5.color = "오렌지";
+
+        b5.price = -5000;  //price-5000 을해야하는데 실수로 -5000을 썼다는가정
+                            //할인행사로 5000원을 깎아주려했는데 가격이 -5000원이됨
+        System.out.println("가격 : "+b5.price + "원");
+        // 고객이 해상도 문의를 했는데 주석처리돼서
+        System.out.println("해상도 : " + b5.resolution);
+        // 해상도 : null 로출력   이런상황을 막기위해 getter 와 setter 를 쓴다
+
+        System.out.println("------------");
+
+        b5.setPrice(-10000);
+
+        System.out.println("가격 : " + b5.getPrice() + "원");
+        System.out.println("해상도 : " + b5.getResolution());
+// getter 와 setter 로 설정 하고나니
+//        가격 : 100000원
+//        해상도 : 판매자에게 문의하세요.  정상적인 답이 출력된다
+
 
 
     }
