@@ -107,7 +107,7 @@ public class _05_method_return_methodOverLoading_scope {
         }
         // System.out.println(j);  // 중괄호 밖인 여기선 호출 안됨
 
-        int abc =0;         // main에 선언한 변수 abc를 함수 인수에 넣어 쓸 수있다.
+        int abc =0;         // main에 선언한 변수 abc를  함수 인수에 넣어 쓸 수는있다.
         System.out.println(abc(abc));
 
         

@@ -1,16 +1,34 @@
+chap_01
 _01_  기초타입용어(char,float,double), 정수 실수 형변환, 문자 숫자 형변환, 연산 ( 자바는 소수점을 생략시킴 ), 증감연산 ++, 삼항연산자
 _02_ 포함메서드(contains, indexOf, lastIndexOf, startsWith), 문자열변환(replace,subString), 문자열비교 (equals), 이스케이프문자, if문, switchcase문
 _03_ 반복문for, while, do while , 중첩 for, for문에서 break, while문에서 break, continue
 _04_ 배열, 배열의 순회, for each반복문, 다차원 배열, 길이 다른 배열순회, 영화관 좌석 배열 만들기, 아스키코드
-_05_ 메서드만들기(함수), return, 메서드 오버로딩, 변수 범위
+_05_ 메서드만들기(함수), return, 메서드 오버로딩, 변수 범위, 거듭제곱
 _06_ 메인메서드
 _07_ 메서드퀴즈 개인정보를 비공개로 전환하는 메서드 만들기
+_08_ 클래스, 객체 변수, 메서드 오버로딩, 생성자 Constructor, getter, setter
+BlackBox - _08_과 같음 , this
+_09_ 접근제어자 private, 다른패키지를 쓰면 자동으로 import, 랜덤 클래스
+BlackBoxRefurbish - _09_와같음
+_10_ 상속 extends, 메서드 오버라이딩, 부모클래스로 new객체만들기, instanceOf , 객체형변환, Object, super
+Camera, FactoryCam, SpeedCam - _10_과 같음 
+_11_ reference 참조: 기본자료형은 변수끼리 참조를 같이쓰지않고, 참조자료형은 변수끼리 참조를 같이쓸수있다
+_12_ final 상수, enum 열거형(상수들의 묶음)  
+_Quiz_hamburger 햄버거 재료를 표시하는 메서드 만들어 출력하기
 
-
-
+chap_02
+_01_ Abstract 추상클래스, 인터페이스 , 추상메서드  
+camera, detector, reporter패키지  _01_과 같은내용
+_02_ 제네릭메서드 T 
+_03_ 제네릭클래스, Object를 이용해 여러타입을 인수로 쓰기, 제네릭메서드에 인수여러개만들기
+coffee패키지 _03_과 같은내용
+_04_ 래퍼클래스, intValue() 실수를 정수로 바꾸는메서드, toString, 컬렉션 프레임워크 _ ArrayList 배열에 여러내용 추가,조회,삭제,변경,정렬
+PackageTest 챕터1의 _09_ 에서 import연습
 
 
  단축키
+ - ctrl + alt + v 코드자동완성 ( 반환값이있을때)
+
  -  ctrl + alt + ← 이전으로   ctrl + alt + → 다음화면
 
  - 바꿀 단어를 선택후 ctrl + c 로 복사 , ctrl + r 누르면 단어바꿔주는 창이 뜸 그창에 바꿀단어를 적고 replace all 누르면 선택한 단어와 같은 단어는 모두 바뀜
@@ -20,3 +38,5 @@ _07_ 메서드퀴즈 개인정보를 비공개로 전환하는 메서드 만들�
  - ctrl 키를 누르면서 코드를 누르면 연결된 코드 페이지로 이동함
 
  - ctrl + shift + i 누르면 코드와 연결된 메서드,코드를 보여줌
+
+ - alt+insert 생성자 생성 , getter setter 생성

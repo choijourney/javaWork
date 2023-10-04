@@ -4,7 +4,7 @@ import chap_02.PacageTest;
 
 import java.util.Random;     // 랜덤클래스 가져옴 (내장 클래스?)
 
-public class _09_Access_private {
+public class _09_Access_private_randomClass {
     public static void main(String[] args) {
         // 바꿀 단어를 선택후 ctrl + c 로 복사 , ctrl + r 누르면
         // 단어바꿔주는 창이 뜸 그창에 바꿀단어를 적고 replace all 누르면

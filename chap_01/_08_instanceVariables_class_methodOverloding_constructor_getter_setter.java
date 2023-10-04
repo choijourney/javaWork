@@ -1,6 +1,6 @@
 package chap_01;
 
-public class _08_instanceVariables {
+public class _08_instanceVariables_class_methodOverloding_constructor_getter_setter {
     public static void main(String[] args) {
 
         // 클래스

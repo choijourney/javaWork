@@ -4,7 +4,7 @@ import chap_01.camera.Camera;
 import chap_01.camera.FactoryCam;
 import chap_01.camera.SpeedCam;
 
-public class _10_inheritance {
+public class _10_inheritance_extends_methodOverriding_instanceOf_super {
     public static void main(String[] args) {
         // 상속  Camera 패키지의 Camera가 부모 클래스, SpeedCam , FactoryCam이 자식클래스로
         // extends를 써서 부모의 코드를 상속받는다
