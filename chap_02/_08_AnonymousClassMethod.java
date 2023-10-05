@@ -1,6 +1,6 @@
 package chap_02;
 
-public class _08_AnonymousClass {
+public class _08_AnonymousClassMethod {
     public static void main(String[] args) {
 //HomeMadeBurger momMadeBurger = new HomeMadeBurger() {
 //    @Override                    익명클래스를 이렇게 써도되지만 코드가 복잡해져서
@@ -19,7 +19,7 @@ public class _08_AnonymousClass {
     private static HomeMadeBurger getBroBurger() {
         return new HomeMadeBurger() {
             @Override
-            public void cook() {
+            public void cook() {    // 람다식
                 System.out.println("동생표 군대리아");
                 System.out.println("재료 : 빵, 치킨패티, 딸기쨈, 치즈, 삶은계란");
             }

@@ -2,7 +2,7 @@ package chap_02;
 
 import java.util.*;
 
-public class _05_HastSet {
+public class _05_HashSet_LinkedHashSet_Map_Iterator {
     public static void main(String[] args) {
         // 세트 (세트 중 HashSet - 중복값을 빼고 저장, 순서를 랜덤으로 저장)
         HashSet<String> hash = new HashSet<>(); // 다른타입을써도됨

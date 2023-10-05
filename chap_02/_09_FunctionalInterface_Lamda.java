@@ -2,11 +2,11 @@ package chap_02;
 
 import chap_02.converter.*;
 
-public class _09_Lamda {
+public class _09_FunctionalInterface_Lamda {
     public static void main(String[] args) {
         // 람다식  (x,y)-> x+y
 
-        // FunctionalInterface
+        // FunctionalInterface 함수형 인터페이스
         KRWConverter converter = new KRWConverter();
         //   converter.convert(3);  // 3 달러 = 4200 원
 
@@ -40,13 +40,13 @@ public class _09_Lamda {
         };
 
         // 전달값이 두개이상이면
-        ConvertibleWithTwoParams c2 = (USD,KRW) -> {    // 인수에 d,w 다른문자열써도됨
+        ConvertibleWithTwoParams c2 = (USD, KRW) -> {    // 인수에 d,w 다른문자열써도됨
             System.out.println(USD + " 달러 = " + (USD * KRW) + " 원");
         };
-        c2.convert(10,1400);
+        c2.convert(10, 1400);
 
         // 반환값이 있는경우
-        ConvertibleWithReturn c3 = (d,w) -> d * w;  // return생략가능
+        ConvertibleWithReturn c3 = (d, w) -> d * w;  // return생략가능
         c3.convert(20, 1400); // 이상태에서 ctrl + alt + v 누르면
         int result = c3.convert(20, 1400);  // int 자동완성
         System.out.println("20 달러 = " + result + " 원");
