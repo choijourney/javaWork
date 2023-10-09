@@ -24,7 +24,7 @@ public class _10_Stream {
 
         // Collection.stream()
         List<String> langList = new ArrayList<>();  // 컬렉션ArrayList
-//        langList.add("python");
+//        langList.add("python");    add안쓰고 한번에여러개추가↓
         langList = Arrays.asList("python", "java", "javascript", "c", "c++","c#");
         System.out.println(langList.size());
         Stream<String> langListStream = langList.stream();

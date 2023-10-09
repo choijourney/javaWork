@@ -5,10 +5,10 @@ import chap_01.camera.Camera;
 public class _11_reference {
     public static void main(String[] args) {
         // 참조
-        // 기본 자료형 : int, float, double, long, boolean ...
+        // 기본 자료형 : int, float, double, long, short, boolean,char,byte
         // 소문자로 적혀있는 자료형을 기본자료형이라함 모두 기본값이 있다. 0, 0.0, false 등..
         int[] i = new int[3];
-        System.out.println(i[0]); //0 출력
+        System.out.println(i[0]); //0 출력 null로 초기화 불가
 
         double[] d = new double[3];
         System.out.println(d[0]); // 0.0 출력

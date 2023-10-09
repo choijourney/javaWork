@@ -82,7 +82,7 @@ public class _05_method_return_methodOverLoading_scope {
         power(2); //2 * 2 = 4  / 3 * 3 = 9
         powerByExp(3,3); // 3*3*3 = 27
 
-        // 호텔 리턴값있는 함수 변수에 저장
+        // 호텔 리턴값있는 함수를 변수에 저장
         String contactNumber = getPhoneNumber();
         System.out.println("호텔 전화번호: " + contactNumber);
 

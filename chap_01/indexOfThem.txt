@@ -15,6 +15,12 @@ Camera, FactoryCam, SpeedCam - _10_과 같음
 _11_ reference 참조: 기본자료형은 변수끼리 참조를 같이쓰지않고, 참조자료형은 변수끼리 참조를 같이쓸수있다
 _12_ final 상수, enum 열거형(상수들의 묶음)  
 _Quiz_hamburger 햄버거 재료를 표시하는 메서드 만들어 출력하기
+test패키지의 testIkea 메서드 Private 범위 
+
+C:\Program Files\java\jdk-8.0.382.5-hotspot\bin
+// StringBuilder.append  유용할것같음
+// object.toString
+
 
 chap_02
 _01_ Abstract 추상클래스, 인터페이스 , 추상메서드  
@@ -38,8 +44,20 @@ _12_ try catch 예외처리 , throw , finally
 _13_ tryWithResources_ AutoCloseable 인터페이스를 구현하는 객체를 try인수에 쓰면 자동으로 close메서드 실행 , 사용자정의 예외 만들기
 _14_ throws 메서드를 호출한곳으로 예외를 던짐
 _15_ Quiz try catch
-_16_ Thread 
+_16_ Thread , Runnable
 clean 패키지 _16_과 같은내용
+_17_ join 비동기 , Thread.sleep(1000) 1초기다렸다가 다음코드실행 
+_18_ MultiThread _ Runnabel과 익명클래스를 이용해  Thread 여러개 만들기 
+_19_ Synchronized 동기화 
+clean패키지의 room _19_와 같은내용
+_20_Quiz12 Runnable과 Thread 
+_21_Quiz12 
+_22_ input_ Scanner , nextLine() 문장저장 , next() 단어저장
+_23_ souf , File 생성, Folder 생성 mkdir  
+_24_ 파일과 폴더 조회, 파일쓰기,읽기, BufferedReader,BufferedWriter, tryWithResources, 파일삭제
+_25_ Quiz13 파일가져와서 스캐너에서 사용하기 		saying.txt _25_와 같은내용
+
+
  단축키
  - ctrl + alt + v 코드자동완성 ( 반환값이있을때)
 

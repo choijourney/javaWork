@@ -1,5 +1,7 @@
 package chap_01;
 
+import java.util.Arrays;
+
 public class _04_array_forEach_askiCode {
     public static void main(String[] args) {
 
@@ -37,6 +39,16 @@ public class _04_array_forEach_askiCode {
         for (int i = 0; i < coffee.length; i++) {
             System.out.println(coffee[i] + " 두잔");
         } //인덱스를 이용해 범위를 조절해 쓸 수 있음
+
+
+        // 배열 출력 .toString()
+        int[] number = {1,2,3,4,5};
+        System.out.println(Arrays.toString(number)); // [1, 2, 3, 4, 5]
+
+        //  Arrays.deepToString() 배열 출력 이중배열출력가능
+        String[] arr = {"a", "b", "c", "d"};
+        System.out.println(Arrays.deepToString(arr)); //[a, b, c, d]
+
 
         // for each 반복문 enhanced for
         for (String coff : coffee) {

@@ -4,6 +4,8 @@ public class _02_Generics_genericMethod {
     public static void main(String[] args) {
         // 제네릭스 generics  같은기능을 하는 메서드를 여러개를 쓰지않게
         // 많은 타입을 하나의 메서드로 쓸수있음
+        // 자바에서 제네릭은 클래스와 메서드에만 선언할 수 있다.
+
         Integer[] iArray = {1, 2, 3, 4, 5};
         Double[] dArray = {1.0, 2.0, 3.0, 4.0, 5.0};
         String[] sArray = {"A", "B", "C", "D", "E"};

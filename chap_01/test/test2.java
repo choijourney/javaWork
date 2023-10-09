@@ -151,13 +151,6 @@ public class test2 {
             System.out.println("b 가 잘못되었습니다.");
         }
 
-//        if (a < b) {
-//            if (c == a + b) {
-//
-//            } else {
-//                System.out.println("c가 잘못되었습니다.");
-//            }
-//        }
 
         if (a < b) {
             c = a + b;
@@ -173,7 +166,7 @@ public class test2 {
             }
 
 
-            if (!(e == (a + b + c))) {
+            if (!(d == (a + b + c))) {
                 System.out.println("d가 잘못되었습니다.");
             }
 
@@ -190,7 +183,7 @@ public class test2 {
             } else System.out.println("g가 잘못되었습니다.");
 
             if (!(a >= 5000 && a < 10001) && !(b > 3999) && !(a < b) &&
-                    !(b < a) && !(e == (a + b + c)) && !(e == (a + b + c) % 3) &&
+                    !(b < a) && !(d == (a + b + c)) && !(e == (a + b + c) % 3) &&
                     !(f == (a + b + c + d + e) + 5000) && !(g == f * 2)) {
                 System.out.println("모두 잘못되었습니다.");
             }
@@ -199,3 +192,8 @@ public class test2 {
         }
     }
 }
+
+
+
+
+

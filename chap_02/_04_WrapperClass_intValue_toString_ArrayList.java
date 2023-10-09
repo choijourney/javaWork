@@ -1,8 +1,6 @@
 package chap_02;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
+import java.util.*;
 
 public class _04_WrapperClass_intValue_toString_ArrayList {
     public static void main(String[] args) {
@@ -13,26 +11,34 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
         Double d = 1.0;  // double d = 1.0;
         Character c = 'A';  // char c = 'A';
 
-        System.out.println(i);
-        System.out.println(d);
-        System.out.println(c);
+        System.out.println(i);  //123
+        System.out.println(d);  //1.0
+        System.out.println(c);  // A
 
         System.out.println("------");
         // 래퍼클래스는 클래스기때문에 사용할수있는 메서드들이있다.
         // . 찍으면 쓸수있는 메서드들이나온다
         System.out.println(i.intValue());
-        System.out.println(d.intValue());   // 실수를 정수로 바꿔줌
+        System.out.println(d.intValue()); // 1 실수를 정수로 바꿔줌
         System.out.println(c.charValue());
 
         System.out.println("-------");
         String s = i.toString();  // 정수를 문자열로 바꿔줌
         System.out.println(s);
 
+        Integer w = null;
+        System.out.println(w); // null
+
+        // int 와 Integer 차이
+        //int q = null;  오류남
+
+
 
         // 컬렉션 프레임워크  (ArrayList,LinkedList , set, Map)
         // 배열에 개수를 정하지않고 계속추가변경,정렬등 여러기능 가능함
 
         //ArrayList 여러내용을 배열에 추가할수있음  // 중복추가 가능!!
+        // 배열과 비슷하지만 자료형은 객체 타입을 저장하게 되어있다.
         ArrayList<String> list = new ArrayList<>();
         // 데이터 추가
         list.add("유재석");
@@ -40,6 +46,45 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
         list.add("김종국");
         list.add("박명수");
         list.add("강호동");
+
+
+        // .asList 로 여러요소 한번에 생성하기 / .addAll 로 추가하기
+        List<String> langsList = new ArrayList<>();
+        langsList.add("Js");
+        System.out.println(langsList); //[js]
+        // add한 상태에서 asList를 쓰면 앞에추가했던 js를 지우고 java만출력
+        langsList= Arrays.asList("java");
+        System.out.println(langsList); //[java]
+
+        List<String> langsList1 = new ArrayList<>(Arrays.asList("python", "dart"));
+        System.out.println(langsList1.size());  // 2
+        langsList1.addAll(langsList);   // java추가
+        System.out.println(langsList1.size()); // 3
+
+//       langsList.add("flutter");    // 이렇게 추가하면 오류
+//        System.out.println(langsList);
+        List<String> langsList2 = new ArrayList<>(Arrays.asList("go","c"));
+        langsList2.addAll(langsList1);  // ↑ 이렇게 추가해야함
+        System.out.println(langsList2.size()); // 5
+
+
+        // 중괄호 두개를 쓰면 {{ 변수를 쓰지않고 add만 써도됨
+        ArrayList<String > als = new ArrayList<String>(){{
+            add("apple");
+            add("grape");
+            add("banana");
+        }};
+
+
+
+
+
+        // 배열을 List배열로 변환
+        String[] starr = {"a", "b", "c", "d"};
+        List<String> newArr = Arrays.asList(starr);
+
+
+
         // 데이터 조회 ( 인덱스로 조회) .get을 써서 인덱스값을 넣어 조회할수있음
         System.out.println(list.get(0));
         System.out.println(list.get(1));
@@ -105,6 +150,27 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
             System.out.println(l);
         }
         System.out.println("----");
+
+
+
+        // 중첩 배열 ArrayList
+        ArrayList<Integer[]> ar = new ArrayList<Integer[]>();
+        ar.add(new Integer[]{1,2,3});
+        ar.add(new Integer[]{4,5,6});
+        //System.out.println(ar);   ar만쓰면 오류남
+        System.out.println(ar.get(0)[0]); // 1 출력
+        Object[] arr = ar.toArray();  // Object 배열로 변환후 전체배열출력
+        System.out.println(Arrays.deepToString(arr)); // [[1,2,3],[4,5,6]]
+//        List 클래스의 인스턴스 메서드인 toArray()는 Object 타입의 배열을 반환한다.
+//                타입 변환이 자동으로 이루어지지 않아서 리턴 배열을 활용하기 번거롭다.
+        Integer[] arr1 = ar.toArray(new Integer[0]);
+        System.out.println(arr1);
+//        toArray(T[] a)는 T 타입 배열을 반환한다.
+//        T는 값 타입이 될 수 없기 때문에 int, double, float와 같은 타입의 배열은 이 방법으로는 얻을 수 없다.
+//        파라미터 a의 길이는 0으로 지정하면 알아서 list의 길이에 맞게 조정되어 arr에 저장된다.
+
+
+
 
 
         // LinkedList 링크드 리스트  ArrayList보다 메서드기능이많음  // 중복추가 가능!!

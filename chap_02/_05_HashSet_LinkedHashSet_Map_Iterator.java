@@ -4,7 +4,9 @@ import java.util.*;
 
 public class _05_HashSet_LinkedHashSet_Map_Iterator {
     public static void main(String[] args) {
-        // 세트 (세트 중 HashSet - 중복값을 빼고 저장, 순서를 랜덤으로 저장)
+        // set  세트 중 HashSet - 중복값을 빼고 저장, 순서를 랜덤으로 저장
+        // index가 없음
+
         HashSet<String> hash = new HashSet<>(); // 다른타입을써도됨
 
         hash.add("삼겹살");
@@ -51,8 +53,53 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
 
         System.out.println("----");
 
+        // .addAll() 로 여러요소 추가하기
+        HashSet<Integer> t = new HashSet<>(Arrays.asList(11, 3));
+        t.add(22);
+        System.out.println(t); //[3, 11 ,22]
 
-        // 맵 ( Key, Value ) 를 저장함  중복허용X 순서랜덤 저장
+        HashSet<Integer> t2 = new HashSet<>();
+        t2.add(77);
+        t2.addAll(t);
+        System.out.println(t2); //[3, 11, 77 ,22]
+
+        HashSet<Integer> t3 = new HashSet<>(Arrays.asList(33,44));
+        t3.addAll(t2);
+        System.out.println(t3); //[33, 3, 22, 11, 44, 77]
+
+
+
+        // HashSet 을 ArrayList로 변환해서 정렬하기 Collections.sort
+        ArrayList<Integer> li = new ArrayList<>();
+        li.add(10);         // ArrayList 만들어서
+        li.add(2);
+        Collections.sort(li);   // 정렬하기
+        System.out.println(li); // [2,10] 출력
+
+        HashSet<Integer> ha = new HashSet<>();
+        ha.add(33);     // HashSet 만들어서
+        ha.add(13);     // 정렬하기위해 ArrayList로 형변환
+        ArrayList<Integer> nha = new ArrayList<>(ha);
+        Collections.sort(nha);  // 정렬
+        System.out.println(nha); // [13,33] 출력
+
+
+        // HashSet을 treeSet으로 정렬하기
+        // TreeSet은 Tree자료구조를 이용해 구현된 set이다
+        // 내부적으로 이진트리를 쓰기때문에 순서대로 저장된다
+        // 순서가없는 HashSet을 TresSet에 저장하면 정렬돼서 저장됨
+        HashSet<Integer> tr = new HashSet<>(Arrays.asList(3,2,4));
+                                 //↑이런식으로쓰면 HashSet도 어느정도정렬돼서출력됨
+        System.out.println("HashSet : "+ tr); //[2,3,4]
+
+        TreeSet<Integer> tr1 = new TreeSet<>();
+        tr1.addAll(tr);
+        System.out.println("TreeSet : "+ tr1); // [2,3,4]
+
+
+
+
+        // 맵 ( Key, Value ) 를 저장함  중복허용X 순서랜덤    컬렉션이 아니다.
         HashMap<String, Integer> map = new HashMap<>();  // 키,값에 타입을 적어줌
 //   HashMap<String, Integer> map = new LinkedHashMap<>(); 순서맞게쓰려면 LinkedHashMap
 

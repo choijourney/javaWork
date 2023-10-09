@@ -3,7 +3,7 @@ package chap_02;
 import chap_02.clean.CleanRunnable;
 import chap_02.clean.CleanThread;
 
-public class _16_Thread {
+public class _16_Thread_Runnable {
     public static void main(String[] args) {
         // 쓰레드 동시에 어떤 작업을 하기위해 쓰레드를 씀
         // 자바는 기본이 단일 쓰레드인데 쓰레드를 설정할수있다

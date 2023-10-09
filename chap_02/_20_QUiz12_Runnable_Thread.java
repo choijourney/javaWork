@@ -1,6 +1,6 @@
 package chap_02;
 
-public class _20_QUiz12 {
+public class _20_QUiz12_Runnable_Thread {
     public static void main(String[] args) {
         // 상품 A와 B로 이루어진 세트 상품을 효율적으로 포장하는 프로그램
         // 상품 A와 B는 각각 5개씩 준비
@@ -49,11 +49,6 @@ public class _20_QUiz12 {
 
         try {
             thread.join();
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-
-        try {
             thread1.join();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);

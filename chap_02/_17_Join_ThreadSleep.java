@@ -2,7 +2,7 @@ package chap_02;
 
 import chap_02.clean.CleanRunnable;
 
-public class _17_Join {
+public class _17_Join_ThreadSleep {
     public static void main(String[] args) {
         // join   비동기 then 같은 기능
         CleanRunnable cleanRunnable1 = new CleanRunnable();
