@@ -5,7 +5,7 @@ import java.util.*;
 public class _05_HashSet_LinkedHashSet_Map_Iterator {
     public static void main(String[] args) {
         // set  세트 중 HashSet - 중복값을 빼고 저장, 순서를 랜덤으로 저장
-        // index가 없음
+        // index가 없어서 fori는 못쓰고 forEach만 쓸수있다 .get도 못쓴다
 
         HashSet<String> hash = new HashSet<>(); // 다른타입을써도됨
 
@@ -43,7 +43,11 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
         if (hash.isEmpty()) {
             System.out.println("남은 상품 수 : " + hash.size());
         }
-
+        
+        //  .removeAll  a5에서 a6와 겹치는 요소를 모두삭제(ArrayList참조)
+        
+        
+        
         // 세트를 순서맞게 쓰고싶으면 LinkedHashSet 쓰면됨
         HashSet<Integer> intset = new LinkedHashSet<>();
         intset.add(1);
@@ -108,9 +112,9 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
         map.put("박명수", 5);
         map.put("김종국", 3);
         map.put("서장훈", 15);
-        System.out.println("총 고객수 : " + map.size());  // 3
+        System.out.println("총 고객수 : " + map.size());  // 4
 
-        // 값 가져오기 .get
+        //  .get  값 가져오기
         System.out.println(map.get("유재석"));  // 10
         System.out.println(map.get("박명수"));  // 5
         System.out.println("----");
@@ -118,20 +122,24 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
 
         // containsKey로 포함돼있나 확인
         if (map.containsKey("서장훈")) {  // 인수에 키를 넣어 배열에포함돼있나확인 서장훈이있다면
-            int point = map.get("서장훈");  // get을 이용해 값을 가져와서 point에저장
-            ++point;  // 오늘 방문했으니까 point 1 플러스
+            int point = map.get("서장훈");  // get을 이용해 값을 가져옴
+            ++point;  // 오늘 방문했으니까 값에 point 1 더하기
             // map.put("서장훈",++point);  이렇게써도됨
             System.out.println("고객님의 누적 포인트는 : " + point);
         } else {
             map.put("서장훈", 1);
             System.out.println("서장훈님 신규 등록 (포인트 1)");
         }
+        // containsValue로 포함돼있나 확인
+        System.out.println(map.containsValue(1)) ; // false
 
         System.out.println("----");
 
         // 삭제  .remove
         map.remove("유재석");
         System.out.println(map.get("유재석")); // null
+
+        // map은 .removeAll 안됨
 
         // 전체 삭제
         map.clear();
@@ -163,6 +171,24 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
         }
         System.out.println("----");
 
+
+        // .entrySet 키,값 한번에 가져옴
+        Iterator<Map.Entry<String, Integer>> mapKeyVal = map.entrySet().iterator(); //ctrl+alt+v
+        while (mapKeyVal.hasNext()) {
+            System.out.println(mapKeyVal.next()); // 박명수=10 서장훈=1 출력
+        }
+
+        // .entryset 으로 map의 모든 키와 값을 꺼냄
+        Map<String,Integer> coffee = new HashMap<>();
+        coffee.put("민경훈",10);
+        coffee.put("강호동",1);
+        for(Map.Entry<String ,Integer> entry : coffee.entrySet()){
+            System.out.println("키 : " + entry.getKey() + " / " + "값 : " + entry.getValue());
+        }
+//        키 : 민경훈 / 값 : 10
+//        키 : 강호동 / 값 : 1
+
+
         // 맵 : 중복사용X 순서보장X
         map.put("김종국", 10);
         map.put("김종국", 30);
@@ -174,6 +200,10 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
         // 김종국 50
 
         System.out.println("----");
+
+
+
+
 
 
         // 이터레이터 반복하다가 필요없는요소를 쉽게 지울수있음
@@ -197,7 +227,7 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
         System.out.println(it.next()); // (알 수 없음)
         System.out.println(it.next()); // 김종국
         System.out.println(it.next()); // (알 수 없음)
-        // .next 메서드를 쓰면 다음 요소를 출력  첫시작점은 유재석전줄.
+        // .next 메서드를 쓰면 다음 요소를 출력  첫시작점은 유재석 전줄.
 
         System.out.println("----");
         it = list.iterator();   // 커서를 처음으로 이동
@@ -246,11 +276,28 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
             System.out.println(itmapVal.next());  // 10 1
         }
 
+
+        // 키만 가져와서 .remove로 삭제해봤는데 안됨. 값도 단독으로는 삭제안됨
+
+
         // .entrySet 키,값 한번에 불러옴
-        Iterator<Map.Entry<String, Integer>> mapKeyVal = map1.entrySet().iterator(); //ctrl+alt+v
-        while (mapKeyVal.hasNext()) {
-            System.out.println(mapKeyVal.next()); // 유재석=10 지석진=1 출력
+        Iterator<Map.Entry<String, Integer>> mapKeyVal1 = map1.entrySet().iterator(); //ctrl+alt+v
+        while (mapKeyVal1.hasNext()) {
+            System.out.println(mapKeyVal1.next()); // 유재석=10 지석진=1 출력
         }
+
+        // .entryset 으로 map의 모든 키와 값을 꺼냄
+        Map<String,Integer> coffee1 = new HashMap<>();
+        coffee1.put("민경훈",10);
+        coffee1.put("강호동",1);
+        for(Map.Entry<String ,Integer> entry : coffee1.entrySet()){
+            System.out.println("키 : " + entry.getKey() + " / " + "값 : " + entry.getValue());
+        }
+//        키 : 민경훈 / 값 : 10
+//        키 : 강호동 / 값 : 1
+
+
+
 
     }
 }

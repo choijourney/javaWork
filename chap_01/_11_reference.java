@@ -14,7 +14,7 @@ public class _11_reference {
         System.out.println(d[0]); // 0.0 출력
         // 기본자료형은 배열에 아무값을 넣지않아도 0 출력
 
-        // 참조 자료형 : String, Camera, FactoryCam,SpeedCam같은 객체..
+        // 참조 자료형(객체) : String, Camera, FactoryCam,SpeedCam같은 객체..
 
         String[] s = new String[3];
         System.out.println(s[0]); // null 출력

@@ -127,7 +127,8 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
         //  indexOf 인덱스를 알려줌
         System.out.println(list.indexOf("김종국")); // 2
 
-        // 배열안에 포함이 돼있나 확인만 하려면 contains / true false 로 답해줌
+
+        // contains  배열안에 포함이 돼있나 확인만 함  / true false 로 답해줌
         System.out.println(list.contains("김종국"));  // true
 
         if (list.contains("김종국")) {
@@ -143,6 +144,21 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
 
         // .isEmpty()  비었는지 확인하는 메서드
         System.out.println(list.isEmpty());  // true
+
+
+        //  .removeAll  a5에서 a6와 겹치는 요소를 모두지움
+        ArrayList<String> a5 = new ArrayList<>(Arrays.asList("aa","bb","cc","dd"));
+        System.out.println(a5); // [aa, bb, cc, dd]
+        ArrayList<String> a6 = new ArrayList<>(Arrays.asList("aa","bb","ee"));
+        boolean result= a5.removeAll(a6); // a5에서 a6와 겹치는요소를 지움
+        System.out.println(a5); // [cc, dd]
+        System.out.println(result); // true
+
+        ArrayList<String> a7 = new ArrayList<>(Arrays.asList("ff"));
+        boolean result2= a6.removeAll(a7);  // a6에서 a7과 겹치는 요소가 없어서 안지움
+        System.out.println(result2); // false
+
+
 
         // 다음 학기에 새로 공부 시작
         list.add("유재석");

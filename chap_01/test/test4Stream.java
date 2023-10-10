@@ -37,9 +37,10 @@ public class test4Stream {
 
         System.out.println("-----");
 
-        String[] arr = {"a", "b", "c", "d"};  // 배열을
+        // 배열을 List로 변환
+        String[] arr = {"a", "b", "c", "d"};
         System.out.println(Arrays.toString(arr));
-        List<String> newArr = Arrays.asList(arr); // List배열로 변환
+        List<String> newArr = Arrays.asList(arr);
         System.out.println(newArr);
 
 
@@ -65,16 +66,16 @@ public class test4Stream {
         System.out.println("-----");
         HashSet<Integer> t = new HashSet<>(Arrays.asList(11, 3, 5, 6));
         t.add(22);
-        System.out.println(t);
+        System.out.println(t); // [11, 3, 5, 6, 22]
 
         HashSet<Integer> t2 = new HashSet<>();
         t2.add(77);
         t2.addAll(t);
-        System.out.println(t2);
+        System.out.println(t2); // [11, 3, 5, 6, 22 ,77]
 
         HashSet<Integer> t3 = new HashSet<>(Arrays.asList(33, 44));
         t3.addAll(t2);
-        System.out.println(t3);
+        System.out.println(t3); //[11, 3, 5, 6, 22 ,77, 33, 44]
 
         // List도 컬렉션이기때문에 addAll을 이용해 HashSet에 
         // 요소를 추가할수있고 List에도 HashSet을 추가할수있다
@@ -84,6 +85,10 @@ public class test4Stream {
         al2.addAll(al1);
         System.out.println(al2);
         // "a","b"  와  "a,b" 차이가 있는지 궁금
+        for (String al3 : al2) {
+            System.out.println(al3);
+        }
+        // 다름. forEach로 값을받아보면 a b 는 따로 출력되고 c,d 는 c,d로 출력
 
         List<String> al3 = new ArrayList<>(Arrays.asList("e", "f"));
         al3.addAll(al2);
