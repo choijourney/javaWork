@@ -1,7 +1,7 @@
 package chap_01;
 
 
-import com.sun.xml.internal.ws.api.ha.StickyFeature;
+
 
 public class _07_methodQuiz_static {
     // 나코딩 -> 나** / 주민번호 990130-1***** / 전번 010-1234-****

@@ -1,6 +1,7 @@
 package chap_01;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 public class _04_array_forEach_askiCode {
     public static void main(String[] args) {
@@ -48,6 +49,43 @@ public class _04_array_forEach_askiCode {
         //  Arrays.deepToString() 배열 출력 이중배열출력가능
         String[] arr = {"a", "b", "c", "d"};
         System.out.println(Arrays.deepToString(arr)); //[a, b, c, d]
+
+
+        // 배열 정렬  Arrays.sort 오름차순
+        int[] numb= {100,1};
+        Arrays.sort(numb);
+        System.out.println(Arrays.toString(numb)); // [1,100]
+
+        // 내림차순 정렬 Collections.reverserder 를 써야하는데
+        // Integer가 필요해서 int를 Integer로 변환한다
+        Integer[] nums = Arrays.stream(numb).boxed().toArray(Integer[]::new);
+        Arrays.sort(nums, Collections.reverseOrder());
+        System.out.println(Arrays.toString(nums)); // [100,1]
+
+        // 다시 int형으로 바꿈
+        int[] nums1 = Arrays.stream(nums).mapToInt(i->i).toArray();
+        System.out.println(Arrays.toString(nums1)); //[100,1]
+
+        // for문으로 다시 Integer로 바꿈
+        Integer[] nums2 = new Integer[nums1.length];
+        for (int i = 0; i < nums1.length; i++) {
+            nums2[i] = nums1[i];
+            System.out.println(nums2[i]); // 100 1
+        }
+        System.out.println(Arrays.toString(nums2)); // [100,1]
+
+
+        // int배열 부분정렬
+        int [] n1 = new int[] {9,8,7,6};
+        Arrays.sort(n1,0,2);
+        System.out.println(Arrays.toString(n1)); // [8, 9, 7, 6]
+        // 인덱스 0~ 2 전까지 배열정렬   즉 0,1 배열정렬
+
+        // String 배열 부분정렬
+        String [] s1 = new String[]{"s","d","a"};
+        Arrays.sort(s1,0,2); // 인덱스 0,1 배열정렬
+        System.out.println(Arrays.toString(s1)); // [d,s,a]
+
 
 
         // for each 반복문 enhanced for

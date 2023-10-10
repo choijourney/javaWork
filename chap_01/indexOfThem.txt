@@ -17,7 +17,7 @@ _12_ final 상수, enum 열거형(상수들의 묶음)
 _Quiz_hamburger 햄버거 재료를 표시하는 메서드 만들어 출력하기
 test패키지의 testIkea 메서드 Private 범위 
 
-C:\Program Files\java\jdk-8.0.382.5-hotspot\bin
+
 // StringBuilder.append  유용할것같음
 // object.toString
 

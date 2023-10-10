@@ -96,8 +96,48 @@ public class test4Stream {
         System.out.println("TreeSet : "+ tr1); // [2,3,4]
 
 
-       // List<String > list = List.of  //자바8에서 지원안됨
+        List<String > list = List.of("g","h","i");  //자바8에서 지원안됨
+        System.out.println(list); // [g, h, i]
+        // Array.asList() 와 비슷한방식. 기본적으로 List객체로 리턴.
+        // ArrayList로 리턴받으려면 ↓처럼 인수에 넣어 변환하면됨
+        ArrayList<String> list2 = new ArrayList<>(list);
+        System.out.println(list2);  // [g, h, i]
+
+        // 배열 정렬  Arrays.sort 오름차순
+        int[] numb= {100,1};
+        Arrays.sort(numb);
+        System.out.println(Arrays.toString(numb)); // [1,100]
+
+        // 내림차순 정렬 Collections.reverseOrder가 필요한데
+        //Integer가 필요해서 int를 형변환 시킨다.
+        Integer[] nums = Arrays.stream(numb).boxed().toArray(Integer[]::new);
+        Arrays.sort(nums, Collections.reverseOrder());
+        System.out.println(Arrays.toString(nums)); // [100,1]
+
+        // 다시 int형으로 바꿈
+        int[] nums1 = Arrays.stream(nums).mapToInt(i->i).toArray();
+        System.out.println(Arrays.toString(nums1)); //[100,1]
+        System.out.println("----");
 
 
+        // for문으로 다시 Integer로 바꿈
+        Integer[] nums2 = new Integer[nums1.length];
+        for (int i = 0; i < nums1.length; i++) {
+            nums2[i] = nums1[i];
+            System.out.println(nums2[i]); // 100 1
+        }
+        System.out.println(Arrays.toString(nums2)); // [100,1]
+
+
+        // int배열 부분정렬
+        int [] n1 = new int[] {9,8,7,6};
+        Arrays.sort(n1,0,2);
+        System.out.println(Arrays.toString(n1)); // [8, 9, 7, 6]
+        // 인덱스 0~ 2 전까지 배열정렬   즉 0,1 배열정렬
+
+        // String 배열 부분정렬
+        String [] s1 = new String[]{"s","d","a"};
+        Arrays.sort(s1,0,2); // 인덱스 0,1 배열정렬
+        System.out.println(Arrays.toString(s1)); // [d,s,a]
     }
 }

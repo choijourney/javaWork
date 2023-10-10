@@ -68,15 +68,22 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
         System.out.println(langsList2.size()); // 5
 
 
+        // List.of 로 여러요소 추가하기
+        List<String > list1 = List.of("g","h","i");  //자바8에서 지원안됨
+        System.out.println(list); // [g, h, i]
+        // Array.asList() 와 비슷한방식. 기본적으로 List객체로 리턴.
+        // ArrayList로 리턴받으려면 ↓처럼 인수에 넣어 변환하면됨
+        ArrayList<String> list2 = new ArrayList<>(list);
+        System.out.println(list2);  // [g, h, i]
+        
+        
+        
         // 중괄호 두개를 쓰면 {{ 변수를 쓰지않고 add만 써도됨
         ArrayList<String > als = new ArrayList<String>(){{
             add("apple");
             add("grape");
             add("banana");
         }};
-
-
-
 
 
         // 배열을 List배열로 변환
