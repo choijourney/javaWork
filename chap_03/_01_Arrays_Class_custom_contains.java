@@ -1,11 +1,11 @@
-package chap_01.test;
+package chap_03;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class test6 {
+public class _01_Arrays_Class_custom_contains {
     public static void main(String[] args) {
         // java.util 패키지
         // 에는 프로그램을 개발하는데 유용한 유틸리티 클래스가 다수 포함돼있다.
@@ -89,7 +89,7 @@ public class test6 {
         
 
 
-        // String은 객체배열이라 오류안남
+        // String은 객체배열이라 list로 변환해도 오류안남
         String[] st = {"f", "g"};
         boolean contains1 = Arrays.asList(st).contains("f");
         System.out.println(contains1); // true
@@ -118,5 +118,7 @@ public class test6 {
         return found;
     }
 
+    
+    
 
 }

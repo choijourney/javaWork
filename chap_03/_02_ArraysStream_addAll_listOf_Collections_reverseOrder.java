@@ -1,10 +1,9 @@
-package chap_01.test;
+package chap_03;
 
 import java.util.*;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
-public class test4Stream {
+public class _02_ArraysStream_addAll_listOf_Collections_reverseOrder {
     public static void main(String[] args) {
         // Stream 연습
 
