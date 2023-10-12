@@ -4,6 +4,8 @@ public class _01_helloWorld {
     //ctrl + alt + l 자동줄맞춤    alt+insert 뉴클래스생성
     public static void main(String[] args) {
         // 변수(variable)는 '값을 저장할 수 있는 메모리 상의 공간'을 의미
+        // javac.exe 자바 컴파일러
+
 
         System.out.println("Hello World!!");
         System.out.println("안녕");
