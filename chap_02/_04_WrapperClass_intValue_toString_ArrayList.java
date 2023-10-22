@@ -33,7 +33,6 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
         //int q = null;  오류남
 
 
-
         // 컬렉션 프레임워크  (ArrayList,LinkedList , set, Map)
         // 배열에 개수를 정하지않고 계속추가변경,정렬등 여러기능 가능함
 
@@ -47,13 +46,24 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
         list.add("박명수");
         list.add("강호동");
 
+        
+        // List에서 ArrayList로 강제변환, ArrayList에서 List로 자동변환
+        List<String> lists = new ArrayList<>();   // List에 자식객체대입 (ArrayList가 List로 자동변환)
+        lists = Arrays.asList("C", "C+");  // List에 문자열추가
+        ArrayList<String> lists1 = new ArrayList<>(lists); // ArryList로 강제변환
+        List<ArrayList<String>> lists2 = Arrays.asList(lists1);  // 다시 리스트로변환
+        // ArrayList에는 Arrays.asList를 쓸수없다
+        // 그래서 List에 자식객체를 대입해서 asList로 문자열을 추가하고
+        // List를 다시 ArrayList로 강제변환했다
+        // 그리고 다시 List로 변환할때 List<ArrayList<String>> List타입이 이렇게변했다
+
 
         // .asList 로 여러요소 한번에 생성하기 / .addAll 로 추가하기
         List<String> langsList = new ArrayList<>();
         langsList.add("Js");
         System.out.println(langsList); //[js]
         // add한 상태에서 asList를 쓰면 앞에추가했던 js를 지우고 java만출력
-        langsList= Arrays.asList("java");
+        langsList = Arrays.asList("java");
         System.out.println(langsList); //[java]
 
         List<String> langsList1 = new ArrayList<>(Arrays.asList("python", "dart"));
@@ -63,23 +73,22 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
 
 //       langsList.add("flutter");    // 이렇게 추가하면 오류
 //        System.out.println(langsList);
-        List<String> langsList2 = new ArrayList<>(Arrays.asList("go","c"));
+        List<String> langsList2 = new ArrayList<>(Arrays.asList("go", "c"));
         langsList2.addAll(langsList1);  // ↑ 이렇게 추가해야함
         System.out.println(langsList2.size()); // 5
 
 
         // List.of 로 여러요소 추가하기
-        List<String > list1 = List.of("g","h","i");  //자바8에서 지원안됨
+        List<String> list1 = List.of("g", "h", "i");  //자바8에서 지원안됨
         System.out.println(list); // [g, h, i]
         // Array.asList() 와 비슷한방식. 기본적으로 List객체로 리턴.
         // ArrayList로 리턴받으려면 ↓처럼 인수에 넣어 변환하면됨
         ArrayList<String> list2 = new ArrayList<>(list);
         System.out.println(list2);  // [g, h, i]
-        
-        
-        
+
+
         // 중괄호 두개를 쓰면 {{ 변수를 쓰지않고 add만 써도됨
-        ArrayList<String > als = new ArrayList<String>(){{
+        ArrayList<String> als = new ArrayList<String>() {{
             add("apple");
             add("grape");
             add("banana");
@@ -89,7 +98,6 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
         // 배열을 List배열로 변환
         String[] starr = {"a", "b", "c", "d"};
         List<String> newArr = Arrays.asList(starr);
-
 
 
         // 데이터 조회 ( 인덱스로 조회) .get을 써서 인덱스값을 넣어 조회할수있음
@@ -147,17 +155,16 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
 
 
         //  .removeAll  a5에서 a6와 겹치는 요소를 모두지움
-        ArrayList<String> a5 = new ArrayList<>(Arrays.asList("aa","bb","cc","dd"));
+        ArrayList<String> a5 = new ArrayList<>(Arrays.asList("aa", "bb", "cc", "dd"));
         System.out.println(a5); // [aa, bb, cc, dd]
-        ArrayList<String> a6 = new ArrayList<>(Arrays.asList("aa","bb","ee"));
-        boolean result= a5.removeAll(a6); // a5에서 a6와 겹치는요소를 지움
+        ArrayList<String> a6 = new ArrayList<>(Arrays.asList("aa", "bb", "ee"));
+        boolean result = a5.removeAll(a6); // a5에서 a6와 겹치는요소를 지움
         System.out.println(a5); // [cc, dd]
         System.out.println(result); // true
 
         ArrayList<String> a7 = new ArrayList<>(Arrays.asList("ff"));
-        boolean result2= a6.removeAll(a7);  // a6에서 a7과 겹치는 요소가 없어서 안지움
+        boolean result2 = a6.removeAll(a7);  // a6에서 a7과 겹치는 요소가 없어서 안지움
         System.out.println(result2); // false
-
 
 
         // 다음 학기에 새로 공부 시작
@@ -175,11 +182,10 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
         System.out.println("----");
 
 
-
         // 중첩 배열 ArrayList
         ArrayList<Integer[]> ar = new ArrayList<Integer[]>();
-        ar.add(new Integer[]{1,2,3});
-        ar.add(new Integer[]{4,5,6});
+        ar.add(new Integer[]{1, 2, 3});
+        ar.add(new Integer[]{4, 5, 6});
         //System.out.println(ar);   ar만쓰면 오류남
         System.out.println(ar.get(0)[0]); // 1 출력
         Object[] arr = ar.toArray();  // Object 배열로 변환후 전체배열출력
@@ -191,9 +197,6 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
 //        toArray(T[] a)는 T 타입 배열을 반환한다.
 //        T는 값 타입이 될 수 없기 때문에 int, double, float와 같은 타입의 배열은 이 방법으로는 얻을 수 없다.
 //        파라미터 a의 길이는 0으로 지정하면 알아서 list의 길이에 맞게 조정되어 arr에 저장된다.
-
-
-
 
 
         // LinkedList 링크드 리스트  ArrayList보다 메서드기능이많음  // 중복추가 가능!!
@@ -223,26 +226,26 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
         System.out.println(linkedList.getLast()); //남창희
 
         // 배열 중간에 요소추가
-        linkedList.add(1,"김영철");
+        linkedList.add(1, "김영철");
         System.out.println(linkedList.get(1));  //김영철
         System.out.println(linkedList);
         System.out.println("----");
 
         // 삭제 .removeFirst  .removeLast
-        linkedList.remove(linkedList.size()-1); // 마지막요소 삭제
+        linkedList.remove(linkedList.size() - 1); // 마지막요소 삭제
         linkedList.removeLast();  // 마지막요소 삭제
         linkedList.removeFirst(); // 처음요소 삭제
         System.out.println(linkedList);
 
         // 변경 .set
-        linkedList.set(0,"이수근"); // 0번인덱스를 이수근으로 변경
+        linkedList.set(0, "이수근"); // 0번인덱스를 이수근으로 변경
         System.out.println(linkedList.get(0)); //이수근
 
         //  indexOf  인덱스를 알려줌  contains 포함됐는지알려줌
         System.out.println(linkedList.indexOf("김종국"));  // 3
         System.out.println(linkedList.contains("김종국")); // true
 
-        if(linkedList.contains("김종국")){
+        if (linkedList.contains("김종국")) {
             System.out.println("수강 신청 성공");
         } else {
             System.out.println("수강 신청 실패");
@@ -250,8 +253,8 @@ public class _04_WrapperClass_intValue_toString_ArrayList {
 
         // 전체 삭제
         linkedList.clear();
-        if(linkedList.isEmpty()){
-            System.out.println("남은 학생수 : " +  linkedList.size());  // 0
+        if (linkedList.isEmpty()) {
+            System.out.println("남은 학생수 : " + linkedList.size());  // 0
         }
         // isEmpty 비었으면 true 출력
 

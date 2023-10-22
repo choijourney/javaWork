@@ -28,7 +28,8 @@ camera, detector, reporter패키지  _01_과 같은내용
 _02_ 제네릭메서드 T 
 _03_ 제네릭클래스, Object를 이용해 여러타입을 인수로 쓰기, 제네릭메서드에 인수여러개만들기
 coffee패키지 _03_과 같은내용
-_04_ 래퍼클래스, intValue() 실수를 정수로 바꾸는메서드, toString, 컬렉션 프레임워크 _ ArrayList 배열에 여러내용 추가,조회,삭제,변경,정렬
+_04_ 래퍼클래스, intValue() 실수를 정수로 바꾸는메서드, toString, 컬렉션 프레임워크 _ ArrayList 배열에 여러내용 추가,조회,삭제,변경,정렬,
+ArrayList에서 List로 변환, List에서 ArrayList로 강제변환.
 PackageTest 챕터1의 _09_ 에서 import연습
 _05_ 컬렉션프레임워크_ set 중 hashSet (중복값빼고저장,순서랜덤), 세트 순서맞게쓰고싶으면 LinkedHashSet, 컬렉션_map ( key , value) 저장 ,
 이터레이터 반복중 요소삭제가능, set과 map에 이터레이터 쓰기
@@ -37,8 +38,8 @@ _07_ 익명클래스_클래스를 가져다쓰는데 오버라이딩을 통해 �
 _08_ 익명클래스심화_ 07번의익명클래스 심화로 메서드를 따로 만듦 
 _09_ FunctionalInterface함수형 인터페이스 ( 변수에 함수저장 ) , 람다식 
 converter패키지 _09_와 같은내용
-_10_ 스트림 JS의 메서드같은기능.  배열스트림, 컬렉션스트림, Stream.of() , .filter() , .sum() , .sorted() , .forEach , startsWith, contains , anyMatch,
-allMatch, map , String::toUpperCase , collect(Collectors.toList()) _ 리스트에저장 
+_10_ 스트림 JS의 메서드같은기능.  배열스트림, 컬렉션스트림, Stream.of() , .filter() , .sum() , .sorted() , .forEach , startsWith, contains ,
+ anyMatch, allMatch, map , String::toUpperCase , collect(Collectors.toList()) _ 리스트에저장 
 _11_ Stream Quiz 삼항연산자
 _12_ try catch 예외처리 , throw , finally 
 _13_ tryWithResources_ AutoCloseable 인터페이스를 구현하는 객체를 try인수에 쓰면 자동으로 close메서드 실행 , 사용자정의 예외 만들기
@@ -58,13 +59,13 @@ _24_ 파일과 폴더 조회, 파일쓰기,읽기, BufferedReader,BufferedWriter
 _25_ Quiz13 파일가져와서 스캐너에서 사용하기 		saying.txt _25_와 같은내용
 
 chap_03
-_01_  Arrays클래스 Arrays.copyOf, Arrays.fill, Arrays.binarySearch, Arrays.sort, 사용자지정contains메서드만들기, Arrays.asList().contains(),
-int배열을 List로 변환하기	
+_01_  Arrays클래스 배열복사 Arrays.copyOf, 배열 초기화Arrays.fill, Arrays.binarySearch, Arrays.sort, 사용자지정contains메서드만들기, 
+Arrays.asList().contains(), int배열을 List로 변환하기	
 _02_ stream연습 stream은 Arrays클래스의 메서드.    .asList, .addAll , List를 int배열로 바꿈 mapToint , list.Of 로 여러요소추가 , 내림차순정렬
 Collections.reverseOrder가 필요한데 Integer가필요해서 int를 형변환,   Integer를 int로 형변환 , 배열부분정렬 
 
  단축키
- - ctrl + alt + v 코드자동완성 ( 반환값이있을때)
+ - ctrl + alt + v  변수 코드자동완성 ( 반환값이있을때)
 
  -  ctrl + alt + ← 이전으로   ctrl + alt + → 다음화면
 

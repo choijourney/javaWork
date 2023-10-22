@@ -91,7 +91,7 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
         // HashSet을 treeSet으로 정렬하기
         // TreeSet은 Tree자료구조를 이용해 구현된 set이다
         // 내부적으로 이진트리를 쓰기때문에 순서대로 저장된다
-        // 순서가없는 HashSet을 TresSet에 저장하면 정렬돼서 저장됨
+        // 순서가없는 HashSet을 TreeSet에 저장하면 정렬돼서 저장됨
         HashSet<Integer> tr = new HashSet<>(Arrays.asList(3,2,4));
                                  //↑이런식으로쓰면 HashSet도 어느정도정렬돼서출력됨
         System.out.println("HashSet : "+ tr); //[2,3,4]
@@ -178,7 +178,7 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
             System.out.println(mapKeyVal.next()); // 박명수=10 서장훈=1 출력
         }
 
-        // .entryset 으로 map의 모든 키와 값을 꺼냄
+        // .entryset 으로 키,값 한번에 가져옴
         Map<String,Integer> coffee = new HashMap<>();
         coffee.put("민경훈",10);
         coffee.put("강호동",1);
@@ -189,20 +189,20 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
 //        키 : 강호동 / 값 : 1
 
 
-        // 맵 : 중복사용X 순서보장X
+        // 중복허용이 안돼서 추가를 3번더했어도 추가가 되지않고 값만 50으로 업데이트됨
         map.put("김종국", 10);
         map.put("김종국", 30);
         map.put("김종국", 50);
         for (String k : map.keySet()) {
             System.out.println("키는 : " + k + "\t 값은 :" + map.get(k));
         }
-        // 중복허용이 안돼서 추가를 3번더했어도 추가가 되지않고 값만 50으로 업데이트됨
         // 김종국 50
 
+
+        System.out.println(map.entrySet());  //[박명수=5, 서장훈=15, 유재석=10, 김종국=50]
+
+
         System.out.println("----");
-
-
-
 
 
 
@@ -286,7 +286,7 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
             System.out.println(mapKeyVal1.next()); // 유재석=10 지석진=1 출력
         }
 
-        // .entryset 으로 map의 모든 키와 값을 꺼냄
+        // .entryset 으로 키,값 한번에 불러옴
         Map<String,Integer> coffee1 = new HashMap<>();
         coffee1.put("민경훈",10);
         coffee1.put("강호동",1);
@@ -295,6 +295,7 @@ public class _05_HashSet_LinkedHashSet_Map_Iterator {
         }
 //        키 : 민경훈 / 값 : 10
 //        키 : 강호동 / 값 : 1
+
 
 
 

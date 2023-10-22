@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class _14_Throws {
     public static void main(String[] args)  {
-        // throws 메서드를 호출한곳으로 예외를 던진다
+        // throws 메서드를 호출한곳으로 예외를 던질 수 있다
 
         try {
             writeFile();

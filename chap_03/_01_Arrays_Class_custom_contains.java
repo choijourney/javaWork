@@ -37,11 +37,11 @@ public class _01_Arrays_Class_custom_contains {
         arr5[0] = 4;
         arr5[1] = 4;
         Arrays.fill(arr5, 5);
-        System.out.println(Arrays.toString(arr5)); // [4,4]
+        System.out.println(Arrays.toString(arr5)); // [5,5]
 
-        int[] arr6 = new int[5];
+        int[] arr6 = {3, 3, 3, 3};
         Arrays.fill(arr6, 6);
-        System.out.println(Arrays.toString(arr6)); //[6, 6, 6, 6, 6]
+        System.out.println(Arrays.toString(arr6)); //[6, 6, 6, 6]
 
         // Arrays. sort 배열을 오름차순 정렬해줌
         int[] arr7 = {5, 4, 3, 2, 1};
@@ -61,8 +61,10 @@ public class _01_Arrays_Class_custom_contains {
 
 
         //  Arrays.asList(n).contains(5); 오류
-        Integer[] n = {5, 6, 7, 8};
-        // int [] n = {5,6,7,8};  기본형을 List로 변환할때 오류남 그래서 답도 false로 오류남
+        // Arrays.asList를 쓰면 List로 변환됨
+        Integer[] n = {5, 6, 7, 8};  // wrapper클래스를 asList메서드를 써서 List로 변환
+        // int [] n = {5,6,7,8};  기본형을 List로 변환시킬수없음 그래서 답도 false로 오류남
+
         System.out.println(Arrays.toString(n)); // [5, 6, 7, 8]
         boolean contains = Arrays.asList(n).contains(5);
         System.out.println(contains);   // true
@@ -85,8 +87,7 @@ public class _01_Arrays_Class_custom_contains {
         System.out.println(integerList1);  // [4,5]
 
         // 세번째. Apache Commons Lang 라이브러리사용 다운받아야함 
-        int[] ar4={5,6};
-        
+        int[] ar4 = {5, 6};
 
 
         // String은 객체배열이라 list로 변환해도 오류안남
@@ -118,7 +119,5 @@ public class _01_Arrays_Class_custom_contains {
         return found;
     }
 
-    
-    
 
 }

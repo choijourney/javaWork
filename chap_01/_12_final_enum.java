@@ -42,8 +42,7 @@ public class _12_final_enum {
         resoulution = Resoulution.valueOf("UHD");
         System.out.println(resoulution);  // UHD 출력
 //        문자열을 열거형으로 바꿔준다고해서
-// valueOf("QHD")를 넣어봤는데 enum값에 QHD가 없다고 에러남. 추가되는게 아니면
-// enum Resoulution 을 업데이트하지 뭐하러..?
+// valueOf("QHD")를 넣어봤는데 enum값에 QHD가 없다고 에러남. 추가는 못함
 
         for (Resoulution myRes : Resoulution.values()) {
             System.out.println(myRes.name() + " : " + myRes.ordinal());

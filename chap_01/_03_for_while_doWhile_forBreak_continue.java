@@ -3,7 +3,8 @@ package chap_01;
 public class _03_for_while_doWhile_forBreak_continue {
     public static void main(String[] args) {
 
-        // for문안에서 값을 업데이트하려면 추가만 가능하다. for문밖에서 이미선언한 변수가있어야하고 for문안에서   star += "*" 추가
+        // for문안에서 값을 업데이트하려면 추가만 가능하다.
+        // for문밖에서 이미선언한 변수가있어야하고 for문안에서   star += "*" 추가
 
         // 반복문 for (fori 적고 엔터 치면 자동완성)
         for (int i = 0; i < 10; i += 2) {
